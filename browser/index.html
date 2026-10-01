@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Password Strength Checker</title>
+</head>
+
+<body>
+
+```
+<div class="container">
+
+    <h1>Password Strength Checker</h1>
+
+    <p class="description">
+        Enter a password to check its security strength.
+    </p>
+
+    <label for="password">Enter your password:</label>
+
+    <div class="password-box">
+        <input
+            type="password"
+            id="password"
+            placeholder="Enter password"
+        >
+
+        <button id="toggleButton" type="button">
+            Show
+        </button>
+    </div>
+
+    <div class="requirements">
+        <h3>Password requirements</h3>
+
+        <ul>
+            <li id="lengthCheck">✗ At least 8 characters</li>
+            <li id="uppercaseCheck">✗ An uppercase letter</li>
+            <li id="lowercaseCheck">✗ A lowercase letter</li>
+            <li id="numberCheck">✗ A number</li>
+            <li id="specialCheck">✗ A special character</li>
+        </ul>
+    </div>
+
+    <div class="buttons">
+        <button id="checkButton" type="button">
+            Check Password
+        </button>
+
+        <button id="resetButton" type="button">
+            Reset
+        </button>
+    </div>
+
+    <div id="result"></div>
+
+</div>
+
+<style>
+
+    * {
+        box-sizing: border-box;
+    }
+
+    body {
+        font-family: 'Times New Roman', Times, serif;
+        margin: 0;
+        padding: 20px;
+        background-color: #8f6c6c;
+        min-height: 100vh;
+    }
+
+    .container {
+        max-width: 600px;
+        margin: 50px auto;
+        padding: 30px;
+        background-color: #f8f5f5;
+        border-radius: 12px;
+        box-shadow: 0 4px 15px rgba(0, 0, 0, 0.25);
+    }
+
+    h1 {
+        text-align: center;
+        margin-bottom: 10px;
+    }
+
+    .description {
+        text-align: center;
+        margin-bottom: 25px;
+        font-size: 16px;
+    }
+
+    label {
+        display: block;
+        margin-bottom: 10px;
+        font-weight: bold;
+    }
+
+    .password-box {
+        display: flex;
+        gap: 8px;
+    }
+
+    input {
+        flex: 1;
+        padding: 11px;
+        border: 1px solid #999;
+        border-radius: 5px;
+        font-family: inherit;
+        font-size: 16px;
+    }
+
+    #toggleButton {
+        padding: 10px 15px;
+        background-color: #d8cccc;
+        color: black;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+        font-family: inherit;
+    }
+
+    .requirements {
+        margin-top: 25px;
+        padding: 15px;
+        background-color: #eee5e5;
+        border-radius: 8px;
+    }
+
+    .requirements h3 {
+        margin-top: 0;
+    }
+
+    .requirements ul {
+        padding-left: 25px;
+    }
+
+    .requirements li {
+        margin-bottom: 8px;
+    }
+
+    .buttons {
+        display: flex;
+        justify-content: center;
+        gap: 10px;
+        margin-top: 20px;
+    }
+
+    #checkButton,
+    #resetButton {
+        padding: 11px 20px;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+        font-family: inherit;
+        font-size: 16px;
+    }
+
+    #checkButton {
+        background-color: #6f4f4f;
+        color: white;
+    }
+
+    #resetButton {
+        background-color: #d8cccc;
+        color: black;
+    }
+
+    #checkButton:hover,
+    #resetButton:hover,
+    #toggleButton:hover {
+        opacity: 0.8;
+    }
+
+    #result {
+        margin-top: 25px;
+        padding: 15px;
+        background-color: white;
+        border-radius: 8px;
+        min-height: 40px;
+    }
+
+    .strong {
+        font-weight: bold;
+    }
+
+    .error {
+        font-weight: bold;
+    }
+
+    @media (max-width: 500px) {
+
+        .container {
+            margin: 20px auto;
+            padding: 20px;
+        }
+
+        .password-box {
+            flex-direction: column;
+        }
+
+        .buttons {
+            flex-direction: column;
+        }
+
+        #checkButton,
+        #resetButton {
+            width: 100%;
+        }
+    }
+
+</style>
+
+<script src="script.js"></script>
+
+
+</body>
+</html>
